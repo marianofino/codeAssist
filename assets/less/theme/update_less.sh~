@@ -1,0 +1,5 @@
+#! /bin/bash
+while inotifywait -r less/*
+do
+  lessc less/main.less > css/main.css # your compile command
+done
