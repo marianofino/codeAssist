@@ -1,3 +1,0 @@
-#! /bin/bash
-
-  lessc less/theme/styles.less > css/styles-5.css # your compile commadon
