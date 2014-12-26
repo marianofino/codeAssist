@@ -1,4 +1,4 @@
-# codeAssis
+# codeAssist
 
 Collaborative database of Algorithms
 

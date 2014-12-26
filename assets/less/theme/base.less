@@ -309,16 +309,20 @@ pre code {
 		margin: 0;
 	}
 
-	div.tab-content {
+	div:not([type="pills"]) > div.tab-content {
 		padding: 10px;
-		background: @color-2;
+		background: darken(@color, 30%);
+	}
+
+	.nav-pills {
+		margin-bottom: 10px;
 	}
 
 	div.description {
     	.make-lg-column(4);
 	}
 
-	div.code {
+	div.resources {
     	.make-lg-column(8);
 	}
 }

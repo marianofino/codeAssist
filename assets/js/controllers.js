@@ -51,7 +51,7 @@ controller('AppController', function ($scope, $http, $location, $sce) {
 	// Search algorithm from user input 
 	$scope.getAlgorithm = function() {
 		// Initialize
-		$scope.current = {name: "", languages: [], description: "", complexity: {}};
+		$scope.current = {name: "", languages: [], description: "", complexity: {}, video_overview: ""};
 		var n = $scope.algorithms.length;
 		var i = 0;
 
@@ -63,8 +63,7 @@ controller('AppController', function ($scope, $http, $location, $sce) {
 				angular.copy($scope.algorithms[i],$scope.current);
 				$scope.current.sources = [];
 				$scope.current.description = $sce.trustAsHtml($scope.current.description);
-
-				console.log($scope.current);
+				$scope.current.video_overview = $sce.trustAsHtml($scope.current.video_overview);
 
 				// Normalize name to get folder
 				$scope.current.normalized = $scope.current.name.toLowerCase().replace(' ','_');

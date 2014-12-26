@@ -112,7 +112,7 @@
     </section><!--//about-->
 
     <!-- ******ALGORITHM****** --> 
-    <section id="algorithm" class="algorithm section" ng-show="current.name">
+    <section id="algorithm" class="algorithm section" ng-if="current.name">
         <div class="container">
 				<div class="row">
 					<div class="description">
@@ -124,11 +124,23 @@
 							</ul>
 						</p>
 						<p>Source: <a href="{{current.source}}" target="_blank">{{current.source}}</a></p>
+						<p ng-if="current.links">Useful links:
+							<ul>
+								<li ng-repeat="(title,link) in current.links"><a href="{{link}}" target="_blank">{{title}}</a></li>
+							</ul>
+						</p>
 					</div>
-					<div class="code">
+					<div class="resources">
 						<tabset>
-							<tab ng-repeat="tab in current.sources" heading="{{tab.language}}">
-								<ng-prism class="language-cpp">{{tab.code}}</ng-prism>
+							<tab heading="Overview" ng-if="current.video_overview">
+								<div ng-bind-html="current.video_overview"></div>
+							</tab>
+							<tab heading="Implementation">
+								<tabset type="pills">
+									<tab ng-repeat="tab in current.sources" heading="{{tab.language}}">
+										<ng-prism class="language-cpp">{{tab.code}}</ng-prism>
+									</tab>
+								</tabset>
 							</tab>
 						</tabset>
 					</div>

@@ -3690,7 +3690,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ffbe57;
+  border-bottom: 1px solid #1e6162;
 }
 .nav-tabs > li {
   float: left;
@@ -3703,14 +3703,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #ffbe57 #ffbe57 #ffbe57;
+  border-color: #1e6162 #1e6162 #1e6162;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #ffe5bd;
-  background-color: #ffbe57;
-  border: 1px solid #ffbe57;
+  color: #50c8c9;
+  background-color: #1e6162;
+  border: 1px solid #1e6162;
   border-bottom-color: transparent;
   cursor: default;
 }
@@ -3771,7 +3771,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #337ab7;
+  background-color: #ffbe57;
 }
 .nav-stacked > li {
   float: none;
@@ -6668,9 +6668,12 @@ pre code {
   height: 450px;
   margin: 0;
 }
-.algorithm div.tab-content {
+.algorithm div:not([type="pills"]) > div.tab-content {
   padding: 10px;
-  background: #ffbe57;
+  background: #1e6162;
+}
+.algorithm .nav-pills {
+  margin-bottom: 10px;
 }
 .algorithm div.description {
   position: relative;
@@ -6684,14 +6687,14 @@ pre code {
     width: 33.33333333%;
   }
 }
-.algorithm div.code {
+.algorithm div.resources {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 1200px) {
-  .algorithm div.code {
+  .algorithm div.resources {
     float: left;
     width: 66.66666667%;
   }

@@ -1,3 +1,7 @@
+/*
+ * Source: http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort#C.2B.2B
+ */
+
 #include <iostream>
 
 using namespace std;
@@ -62,12 +66,22 @@ void merge_sort(int a[], const int low, const int high)		// Recursive sort ...
 	}
 }
  
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
-	int arraySize;
-	// a[] is the array to be sorted. ArraySize is the size of a[] ...
-	merge_sort(a, 0, (arraySize-1) );        // would be more natural to use merge_sort(a, 0, arraySize ), so please try ;-)
+	int array[] = {25,-57,13,73,69,9,74,-86,-73,4,-18,-58,20,6,-25,-91,-61,90,-26,-89,60,-10,99,36,-42};
+   int arraySize = sizeof(array)/sizeof(int);
+
+	// Print input
+	cout << endl << "Original array:" << endl;
+	for(int i = 0 ; i < arraySize ; i++)
+        cout << "array[" << i << "] = " << array[i] << endl;
+
+	merge_sort(array, 0, (arraySize-1) );
  
-	// some work 
+	// Print output
+	cout << endl << "Sorted array:" << endl;
+	for(int i = 0 ; i < arraySize ; i++)
+        cout << "array[" << i << "] = " << array[i] << endl;
+
 	return 0;
 }
